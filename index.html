@@ -13,17 +13,15 @@
 
   <!-- PWA Manifest -->
   <link rel="manifest" href="manifest.json" />
-
-  <!-- Theme color for mobile UI -->
   <meta name="theme-color" content="#FF6F00" />
 
   <style>
     :root {
-      --bg-color: #fff8e1;           /* warm cream background */
-      --primary-color: #B71C1C;      /* deep Indian red */
-      --accent-color: #FF6F00;       /* saffron */
-      --button-bg: #fff3e0;          /* light warm cream */
-      --button-border: #ffb74d;      /* golden border */
+      --bg-color: #fff8e1;
+      --primary-color: #B71C1C;
+      --accent-color: #FF6F00;
+      --button-bg: #fff3e0;
+      --button-border: #ffb74d;
       --radius: 16px;
     }
 
@@ -39,7 +37,7 @@
       height: 100%;
       background-color: var(--bg-color);
       font-family: 'Baloo 2', cursive, sans-serif;
-      overflow: hidden; /* prevent scrolling */
+      overflow: hidden;
       color: var(--primary-color);
     }
 
@@ -127,7 +125,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      box-shadow: 0 4px 8px rgba(255 183 77 / 0.3);
+      box-shadow: 0 4px 8px rgba(255, 183, 77, 0.3);
       transition: background 0.2s ease, transform 0.1s ease;
       cursor: pointer;
       user-select: none;
@@ -137,7 +135,7 @@
       background-color: var(--accent-color);
       color: #fff;
       border-color: #e65100;
-      box-shadow: 0 6px 12px rgba(230 81 0 / 0.6);
+      box-shadow: 0 6px 12px rgba(230, 81, 0, 0.6);
       transform: scale(1.05);
     }
 
@@ -197,7 +195,7 @@
   </div>
 
   <script>
-    // Register service worker for offline support and PWA
+    // Register service worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('service-worker.js')
