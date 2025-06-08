@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Tic Tac Toe 5x5</title>
+
+  <!-- Google Fonts: Baloo 2 for Indian vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Theme color for mobile UI -->
+  <meta name="theme-color" content="#FF6F00" />
+
+  <style>
+    /* ... your existing styles here ... */
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="top-bar">
+      <div class="icon-button" role="button" tabindex="0" aria-label="User Profile"><i class="fas fa-user"></i></div>
+      <div class="icon-button" role="button" tabindex="0" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></div>
+    </div>
+
+    <div class="main-content">
+      <div class="game-logo">
+        <img src="https://img.icons8.com/ios-filled/100/FF6F00/joystick.png" alt="Game Icon" />
+      </div>
+      <div class="game-title">Tic Tac Toe 5×5</div>
+
+      <div class="menu">
+        <div class="menu-button" role="button" tabindex="0"><i class="fas fa-gamepad"></i> Play Solo</div>
+        <div class="menu-button" role="button" tabindex="0"><i class="fas fa-users"></i> Play with a Friend</div>
+        <div class="menu-button" role="button" tabindex="0"><i class="fas fa-cog"></i> Settings</div>
+        <div class="menu-button" role="button" tabindex="0"><i class="fas fa-info-circle"></i> About</div>
+      </div>
+    </div>
+
+    <div class="footer">© 2025 Pritam Dey</div>
+  </div>
+
+  <script>
+    // Register service worker for offline support and PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => {
+            console.log('Service Worker registered with scope:', reg.scope);
+          })
+          .catch(err => {
+            console.error('Service Worker registration failed:', err);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
