@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>About - Tic Tac Toe 5x5</title>
+
+  <!-- Google Fonts: Baloo 2 -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --bg-color: #fff8e1;
+      --primary-color: #B71C1C;
+      --accent-color: #FF6F00;
+      --button-bg: #fff3e0;
+      --button-border: #ffb74d;
+      --radius: 16px;
+    }
+
+    * {
+      border: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-color);
+      font-family: 'Baloo 2', cursive, sans-serif;
+      overflow-y: auto;
+      color: var(--primary-color);
+    }
+
+    .app-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 15px;
+      gap: 20px;
+    }
+
+    .top-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .icon-button {
+      width: 44px;
+      height: 44px;
+      background-color: var(--accent-color);
+      border: 1px solid #d67c00;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(214, 124, 0, 0.5);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      color: white;
+      font-size: 20px;
+    }
+
+    .icon-button:hover {
+      background-color: #e65a00;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 1px 1px 1px #ffb74d;
+      user-select: none;
+      margin-bottom: 24px;
+    }
+
+    .about-text {
+      max-width: 340px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--primary-color);
+      background-color: var(--button-bg);
+      border: 2px solid var(--button-border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(255 183 77 / 0.3);
+      user-select: text;
+      text-align: center;
+      user-select: none;
+    }
+
+    .footer {
+      font-size: 0.85rem;
+      color: var(--primary-color);
+      opacity: 0.65;
+      margin-top: 40px;
+      user-select: none;
+    }
+
+    @media (max-height: 650px) {
+      .page-title {
+        font-size: 1.6rem;
+        margin-bottom: 16px;
+      }
+
+      .about-text {
+        font-size: 1rem;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="top-bar">
+      <div class="icon-button" onclick="history.back()" role="button" tabindex="0" aria-label="Go Back">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="page-title">About</div>
+
+    <div class="about-text">
+      <p>
+        Tic Tac Toe 5×5 is a modern twist on the classic game, designed specifically for Indian players with a warm, vibrant theme inspired by India's rich culture.
+      </p>
+      <p>
+        Developed by Pritam Dey in 2025, this game aims to bring friends and family together through fun and challenging gameplay.
+      </p>
+      <p>
+        Enjoy a beautiful, easy-to-use interface with a touch of Indian colors and fonts. Thank you for playing!
+      </p>
+    </div>
+
+    <div class="footer">© 2025 Pritam Dey</div>
+  </div>
+</body>
+</html>
