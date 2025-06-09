@@ -11,17 +11,13 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#FF6F00" />
-
   <style>
     :root {
-      --bg-color: #fff8e1;
-      --primary-color: #B71C1C;
-      --accent-color: #FF6F00;
-      --button-bg: #fff3e0;
-      --button-border: #ffb74d;
+      --bg-color: #fff8e1;           /* warm cream background */
+      --primary-color: #B71C1C;      /* deep Indian red */
+      --accent-color: #FF6F00;       /* saffron */
+      --button-bg: #fff3e0;          /* light warm cream */
+      --button-border: #ffb74d;      /* golden border */
       --radius: 16px;
     }
 
@@ -37,7 +33,7 @@
       height: 100%;
       background-color: var(--bg-color);
       font-family: 'Baloo 2', cursive, sans-serif;
-      overflow: hidden;
+      overflow: hidden; /* prevent scrolling */
       color: var(--primary-color);
     }
 
@@ -113,6 +109,7 @@
       gap: 12px;
     }
 
+    /* Changed these two buttons from div to anchor to enable navigation */
     .menu-button {
       background-color: var(--button-bg);
       border: 2px solid var(--button-border);
@@ -125,17 +122,18 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      box-shadow: 0 4px 8px rgba(255, 183, 77, 0.3);
+      box-shadow: 0 4px 8px rgba(255 183 77 / 0.3);
       transition: background 0.2s ease, transform 0.1s ease;
       cursor: pointer;
       user-select: none;
+      text-decoration: none; /* remove underline */
     }
 
     .menu-button:hover {
       background-color: var(--accent-color);
       color: #fff;
       border-color: #e65100;
-      box-shadow: 0 6px 12px rgba(230, 81, 0, 0.6);
+      box-shadow: 0 6px 12px rgba(230 81 0 / 0.6);
       transform: scale(1.05);
     }
 
@@ -184,8 +182,8 @@
       <div class="game-title">Tic Tac Toe 5×5</div>
 
       <div class="menu">
-        <div class="menu-button" role="button" tabindex="0"><i class="fas fa-gamepad"></i> Play Solo</div>
-        <div class="menu-button" role="button" tabindex="0"><i class="fas fa-users"></i> Play with a Friend</div>
+        <a href="game.html?mode=solo" class="menu-button" role="button" tabindex="0"><i class="fas fa-gamepad"></i> Play Solo</a>
+        <a href="game.html?mode=friend" class="menu-button" role="button" tabindex="0"><i class="fas fa-users"></i> Play with a Friend</a>
         <div class="menu-button" role="button" tabindex="0"><i class="fas fa-cog"></i> Settings</div>
         <div class="menu-button" role="button" tabindex="0"><i class="fas fa-info-circle"></i> About</div>
       </div>
@@ -193,21 +191,5 @@
 
     <div class="footer">© 2025 Pritam Dey</div>
   </div>
-
-  <script>
-    // Register service worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(reg => {
-            console.log('Service Worker registered with scope:', reg.scope);
-          })
-          .catch(err => {
-            console.error('Service Worker registration failed:', err);
-          });
-      });
-    }
-  </script>
 </body>
 </html>
-
