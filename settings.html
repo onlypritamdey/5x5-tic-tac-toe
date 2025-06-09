@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Settings - Tic Tac Toe 5x5</title>
+
+  <!-- Google Fonts: Baloo 2 -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --bg-color: #fff8e1;
+      --primary-color: #B71C1C;
+      --accent-color: #FF6F00;
+      --button-bg: #fff3e0;
+      --button-border: #ffb74d;
+      --radius: 16px;
+    }
+
+    * {
+      border: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-color);
+      font-family: 'Baloo 2', cursive, sans-serif;
+      overflow-y: auto;
+      color: var(--primary-color);
+    }
+
+    .app-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 15px;
+      gap: 20px;
+    }
+
+    .top-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .icon-button {
+      width: 44px;
+      height: 44px;
+      background-color: var(--accent-color);
+      border: 1px solid #d67c00;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(214, 124, 0, 0.5);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      color: white;
+      font-size: 20px;
+    }
+
+    .icon-button:hover {
+      background-color: #e65a00;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 1px 1px 1px #ffb74d;
+      user-select: none;
+      margin-bottom: 24px;
+    }
+
+    .settings-list {
+      width: 100%;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .setting-item {
+      background-color: var(--button-bg);
+      border: 2px solid var(--button-border);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(255 183 77 / 0.3);
+      user-select: none;
+    }
+
+    .setting-label {
+      font-weight: 600;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent-color);
+      cursor: pointer;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 2px solid var(--button-border);
+      font-family: 'Baloo 2', cursive, sans-serif;
+      font-size: 1rem;
+      color: var(--primary-color);
+      background-color: var(--button-bg);
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+    }
+
+    select:hover, select:focus {
+      border-color: var(--accent-color);
+      outline: none;
+    }
+
+    .footer {
+      font-size: 0.85rem;
+      color: var(--primary-color);
+      opacity: 0.65;
+      margin-top: 40px;
+      user-select: none;
+    }
+
+    @media (max-height: 650px) {
+      .page-title {
+        font-size: 1.6rem;
+        margin-bottom: 16px;
+      }
+
+      .setting-item {
+        padding: 12px 16px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="top-bar">
+      <div class="icon-button" onclick="history.back()" role="button" tabindex="0" aria-label="Go Back">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+      <div></div> <!-- empty for spacing -->
+    </div>
+
+    <div class="page-title">Settings</div>
+
+    <div class="settings-list">
+      <div class="setting-item">
+        <span class="setting-label">Sound Effects</span>
+        <input type="checkbox" id="sound" checked />
+      </div>
+
+      <div class="setting-item">
+        <span class="setting-label">Music</span>
+        <input type="checkbox" id="music" />
+      </div>
+
+      <div class="setting-item">
+        <span class="setting-label">Theme</span>
+        <select id="theme-select">
+          <option value="indian" selected>Indian</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="footer">© 2025 Pritam Dey</div>
+  </div>
+</body>
+</html>
